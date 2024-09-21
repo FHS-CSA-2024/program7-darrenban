@@ -1,30 +1,36 @@
-package src.main.java;
 //import stuff here
-
+import java.util.Scanner;
 //Your code here
 
 public class Program7{
-	//Define your final variables here
-	// **HINT: Maybe the conversion rates?????**
-
-
-	public static void main(String[] args){
-		//Make you own test code here
-		Program7 tester = new Program7();
-		
-		double myTestVal = 0.0;
-		
-		myTestVal = tester.convertMoney(0,0,0);
-		
-		System.out.println(myTestVal);
-	}
-	
-	
-	
-	public double convertMoney(int schruteBucks, int stanleyNickels, int klevins){
-		//implement a function that converts from the old format to the new format
-		
-	}
-	
-	
+    public static void main(String[] args){
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter schrute-bucks:");
+        double schruteBucks = input.nextInt();
+        System.out.print("Enter klevins:");
+        double klevins = input.nextInt();
+        System.out.print("Enter stanley-nickels:");
+        double stanleyNickels = input.nextInt();
+        
+        //calc
+        klevins = klevins + stanleyNickels / 12.0;
+        schruteBucks = schruteBucks + klevins / 20.0;
+        schruteBucks = Math.round(100.0 * schruteBucks) / 100.0;
+        
+        
+        System.out.println("Decimal schrute-bucks = $" + schruteBucks);
+        
+    
+    }
 }
+
+//Paste console output below:
+/*
+Enter schrute-bucks:7
+Enter klevins:17
+Enter stanley-nickels:9
+Decimal schrute-bucks = $7.89
+
+*/
